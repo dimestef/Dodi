@@ -3,61 +3,30 @@ package com.example.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Contract")
+@Table(name = "contract")
 public class Contract {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
 
-    @Column(name = "transferFee")
-    private Long transferFee;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long id;
+
+    @Column(name = "transfer_fee")
+    public Long transferFee;
 
     @Column(name = "wage")
-    private Long wage;
+    public Long wage;
 
-    @Column(name = "durationInMonths")
-    private Long durationInMonths;
+    @Column(name = "duration_in_months")
+    public Long durationInMonths;
 
-    @Column(name = "dateSign")
-    private String dateSign;
+    @Column(name = "date_signed")
+    public String dateSigned;
 
-    public Long getId() {
-        return id;
-    }
+    @ManyToOne
+    @JoinColumn(name = "footballer_id")
+    public Footballer footballer;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getTransferFee() {
-        return transferFee;
-    }
-
-    public void setTransferFee(Long transferFee) {
-        this.transferFee = transferFee;
-    }
-
-    public Long getWage() {
-        return wage;
-    }
-
-    public void setWage(Long wage) {
-        this.wage = wage;
-    }
-
-    public Long getDurationInMonths() {
-        return durationInMonths;
-    }
-
-    public void setDurationInMonths(Long durationInMonths) {
-        this.durationInMonths = durationInMonths;
-    }
-
-    public String getDateSign() {
-        return dateSign;
-    }
-
-    public void setDateSign(String dateSign) {
-        this.dateSign = dateSign;
-    }
+    @ManyToOne
+    @JoinColumn(name = "club_id")
+    public Club club;
 }
