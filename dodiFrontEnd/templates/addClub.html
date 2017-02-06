@@ -1,0 +1,41 @@
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-2"></div>
+    <div class="panel panel-success col-md-8">
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="clubName" class="col-sm-4">Club name</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="clubObject.name" id="clubName" placeholder="Club name">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="clubLeague" class="col-sm-4">Club league</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="clubObject.league" id="clubLeague" placeholder="Club league">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label class="col-sm-4">Club academy</label>
+                    <div class="col-sm-8">
+                        <select class="form-control"
+                                ng-model="clubObject.academy"
+                                ng-options="academy as academy.name for academy in academies">
+                        </select>
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label class="col-sm-4">Club country</label>
+                    <div class="col-sm-8">
+                        <select class="form-control"
+                                ng-model="clubObject.country"
+                                ng-options="country as country.name for country in countries">
+                        </select>
+                    </div>
+                </div><br>
+            </form>
+            <button class="btn btn-success" ng-click="addClub(clubObject)">Add club</button>
+        </div>
+    </div>
+
+</div>

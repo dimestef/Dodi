@@ -13,7 +13,7 @@
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
                 <a href="javascript:void(0)">
-                    Football onewr Dodi
+                    Show / delete options
                 </a>
             </li>
             <li>
@@ -22,12 +22,25 @@
             <li>
                 <a href="javascript:void(0)" ng-click="change('footballer'); getAllFootballers()">Footballers</a>
             </li>
+            <li class="sidebar-brand">
+                <a href="javascript:void(0)">
+                    Add options
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="change('addClub'); getAllCountry(); getAllAcademy();">Add a new Club</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="change('addFootballer'); getAllCountry(); getAllFootballers();">Add a new Footballers</a>
+            </li>
         </ul>
     </div>
 
     <club ng-show="clubFlag"></club>
     <footballer ng-show="footballerFlag"></footballer>
     <skill ng-show="skillFlag"></skill>
+    <add-club ng-show="addClubFlag"></add-club>
+    <add-footballer ng-show="addFootballerFlag"></add-footballer>
 </div>
 
 <script src="angular/angular.js"></script>

@@ -111,11 +111,11 @@ public class OnStartService {
         }
 
         Footballer footballer = new Footballer();
+        footballer.firstName = "Cristiano";
+        footballer.lastName = "Ronaldo";
         footballer.numberOfGoals = 100L;
         footballer.position = "Striker";
         footballer.number = 7L;
-        footballer.firstName = "Cristiano";
-        footballer.lastName = "Ronaldo";
         footballer.age = 32L;
         footballer.country = countryRepository.findOne(5L);
         footballer.skill = skillRepository.findOne(1L);

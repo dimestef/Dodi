@@ -45,6 +45,12 @@ public class FootballService {
         clubRepository.delete(clubId);
     }
 
+    public void addClub(Club club) {
+        clubRepository.save(club);
+    }
+
+
+
     public List<Footballer> getAllFootballers() {
         return footballerRepository.findAll();
     }
@@ -56,14 +62,30 @@ public class FootballService {
         footballerRepository.delete(footballerId);
     }
 
+    public void addFootballer(Footballer footballer) {
+        skillRepository.save(footballer.skill);
+        footballerRepository.save(footballer);
+    }
+
+
+
     public Skill showFootballerSkills(Long footballerId) {
         Footballer footballer = footballerRepository.findOne(footballerId);
         return footballer.skill;
     }
 
-
     public Skill updateSkill(Skill skill) {
-        return skillRepository.save(skill);
+        return skillRepository.saveAndFlush(skill);
+    }
+
+
+
+    public List<Country> getAllCountry() {
+        return countryRepository.findAll();
+    }
+
+    public List<Academy> getAllAcademy() {
+        return academyRepository.findAll();
     }
 
 }

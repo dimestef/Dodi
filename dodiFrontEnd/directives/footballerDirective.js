@@ -27,3 +27,24 @@ app.directive("skill", function () {
         }
     }
 });
+
+
+app.directive("addClub", function () {
+    return{
+        restrict: "E",
+        templateUrl: "templates/addClub.html",
+        scope: false,
+        link: function (scope) {
+        }
+    }
+});
+
+app.directive("addFootballer", function () {
+    return{
+        restrict: "E",
+        templateUrl: "templates/addFootballer.html",
+        scope: false,
+        link: function (scope) {
+        }
+    }
+});

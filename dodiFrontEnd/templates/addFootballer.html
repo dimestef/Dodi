@@ -1,0 +1,105 @@
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-2"></div>
+    <div class="panel panel-success col-md-8" ng-show="footballers[0]">
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-4">Footballer name</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="footballerObject.firstName" placeholder="Footballer name">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label class="col-sm-4">Footballer last name</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="footballerObject.lastName" placeholder="Footballer last name">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label class="col-sm-4">Footballer numberOfGoals</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="footballerObject.numberOfGoals" placeholder="Footballer numberOfGoals">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label class="col-sm-4">Footballer position</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="footballerObject.position" placeholder="Footballer position">
+                    </div>
+                </div><br>
+
+                <div class="form-group">
+                    <label class="col-sm-4">Footballer number</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="footballerObject.number" placeholder="Footballer number">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label class="col-sm-4">Footballer age</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="footballerObject.age" placeholder="Footballer age">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label class="col-sm-4">CFootballerlub country</label>
+                    <div class="col-sm-8">
+                        <select class="form-control"
+                                ng-model="footballerObject.country"
+                                ng-options="country as country.name for country in countries">
+                        </select>
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label class="col-sm-4">Footballer skill</label>
+                    <div class="col-sm-8">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-4">Intelligence</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" ng-model="skillObject.intelligence" min="0" max="100" placeholder="Change Intelligence">
+                                </div>
+                            </div><br>
+                            <div class="form-group">
+                                <label class="col-sm-4">Vision</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" ng-model="skillObject.vision" min="0" max="100" placeholder="Change Vision">
+                                </div>
+                            </div><br>
+                            <div class="form-group">
+                                <label class="col-sm-4">Speed</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" ng-model="skillObject.speed" min="0" max="100" placeholder="Change Speed">
+                                </div>
+                            </div><br>
+                            <div class="form-group">
+                                <label class="col-sm-4">Strength</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" ng-model="skillObject.strength" min="0" max="100" placeholder="Change Strength">
+                                </div>
+                            </div><br>
+                            <div class="form-group">
+                                <label class="col-sm-4">Shooting</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" ng-model="skillObject.shooting" min="0" max="100" placeholder="Change Shooting">
+                                </div>
+                            </div><br>
+                            <div class="form-group">
+                                <label class="col-sm-4">Passing</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" ng-model="skillObject.passing" min="0" max="100" placeholder="Change Passing">
+                                </div>
+                            </div><br>
+                            <div class="form-group">
+                                <label class="col-sm-4">Driblling</label>
+                                <div class="col-sm-8">
+                                    <input type="number" class="form-control" ng-model="skillObject.dribbling" min="0" max="100" placeholder="Change Driblling">
+                                </div>
+                            </div><br>
+                        </form>
+                    </div>
+                </div><br>
+            </form>
+            <button class="btn btn-success" ng-click="addFootballer(footballerObject, skillObject)">Add club</button>
+        </div>
+    </div>
+</div>

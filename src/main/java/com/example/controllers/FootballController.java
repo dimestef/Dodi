@@ -1,14 +1,10 @@
 package com.example.controllers;
 
-import com.example.entity.Club;
-import com.example.entity.Footballer;
-import com.example.entity.Skill;
+import com.example.entity.*;
 import com.example.services.FootballService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,6 +24,13 @@ public class FootballController {
         footballService.deleteClub(id);
     }
 
+    @RequestMapping(value = "/addClub", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void addClub(@RequestBody Club club) {
+        footballService.addClub(club);
+    }
+
+
+
     @RequestMapping(value = "/getAllFootballers", method = RequestMethod.GET)
     public List<Footballer> getAllFootballers() {
         return footballService.getAllFootballers();
@@ -38,10 +41,32 @@ public class FootballController {
         footballService.deleteFootballer(id);
     }
 
+    @RequestMapping(value = "/addFootballer", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void addClub(@RequestBody Footballer footballer) {
+        footballService.addFootballer(footballer);
+    }
+
+
+
     @RequestMapping(value = "/showFootballerSkills/{id}", method = RequestMethod.GET)
     public Skill showFootballerSkills(@PathVariable Long id) {
         return footballService.showFootballerSkills(id);
     }
 
+    @RequestMapping(value = "/updateSkill", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void updateSkill(@RequestBody Skill skill) {
+        footballService.updateSkill(skill);
+    }
 
+
+
+    @RequestMapping(value = "/getAllCountry", method = RequestMethod.GET)
+    public List<Country> getAllCountry() {
+        return footballService.getAllCountry();
+    }
+
+    @RequestMapping(value = "/getAllAcademy", method = RequestMethod.GET)
+    public List<Academy> getAllAcademy() {
+        return footballService.getAllAcademy();
+    }
 }

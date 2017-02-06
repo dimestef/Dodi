@@ -1,17 +1,20 @@
-<div class="panel panel-success text-center" id="club" ng-repeat="club in clubs">
-    <div class="panel-heading">{{club.name}}</div>
-    <div class="panel-body">
-        <ul class="list-group">
-            <li class="list-group-item">
-                Country: {{club.country.name}}
-            </li>
-            <li class="list-group-item">
-                Academy: {{club.academy.name}}
-            </li>
-            <li class="list-group-item">
-                League: {{club.league}}
-            </li>
-        </ul>
-        <button class="btn btn-danger" ng-click="deleteClub(club.id); getAllClubs()">Delete club</button>
-    </div>
+<div class="row" style="margin-top: 20px;" ng-repeat="club in clubs">
+	<div class="col-md-2"></div>
+	<div class="panel panel-success col-md-8">
+		<div class="panel-heading text-center"><h4>{{club.name}}</h4></div>
+		<div class="panel-body text-center">
+			<ul class="list-group">
+				<li class="list-group-item">
+					<b>Country:</b> {{club.country.name}}
+				</li>
+				<li class="list-group-item">
+					<b>Academy:</b> {{club.academy.name}}
+				</li>
+				<li class="list-group-item">
+					<b>League:</b> {{club.league}}
+				</li>
+			</ul>
+			<button class="btn btn-danger" ng-click="deleteClub(club.id); getAllClubs()">Delete club</button>
+		</div>
+	</div>
 </div>
