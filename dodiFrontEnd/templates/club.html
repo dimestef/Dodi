@@ -1,0 +1,17 @@
+<div class="panel panel-success text-center" id="club" ng-repeat="club in clubs">
+    <div class="panel-heading">{{club.name}}</div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item">
+                Country: {{club.country.name}}
+            </li>
+            <li class="list-group-item">
+                Academy: {{club.academy.name}}
+            </li>
+            <li class="list-group-item">
+                League: {{club.league}}
+            </li>
+        </ul>
+        <button class="btn btn-danger" ng-click="deleteClub(club.id); getAllClubs()">Delete club</button>
+    </div>
+</div>

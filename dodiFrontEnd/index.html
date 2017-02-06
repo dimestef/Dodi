@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body ng-app="myApp">
+<div id="wrapper" class="container-fluid" ng-controller="footballController">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="javascript:void(0)">
+                    Football onewr Dodi
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="change('club'); getAllClubs()">Clubs</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="change('footballer'); getAllFootballers()">Footballers</a>
+            </li>
+        </ul>
+    </div>
+
+    <club ng-show="clubFlag"></club>
+    <footballer ng-show="footballerFlag"></footballer>
+    <skill ng-show="skillFlag"></skill>
+</div>
+
+<script src="angular/angular.js"></script>
+<script src="app.js"></script>
+<script src="controller/footballController.js"></script>
+<script src="services/footballService.js"></script>
+<script src="directives/footballerDirective.js"></script>
+</body>
+</html>

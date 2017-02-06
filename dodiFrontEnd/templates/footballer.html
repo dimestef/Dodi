@@ -1,0 +1,21 @@
+<div class="panel panel-success text-center" id="club" ng-repeat="footballer in footballers">
+    <div class="panel-heading">{{footballer.firstName}} {{footballer.lastName}}</div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item">
+                Age: {{footballer.age}}
+            </li>
+            <li class="list-group-item">
+                Dress number: {{footballer.number}}
+            </li>
+            <li class="list-group-item">
+                Number of goals: {{footballer.numberOfGoals}}
+            </li>
+            <li class="list-group-item">
+                Position: {{footballer.position}}
+            </li>
+        </ul>
+        <button class="btn btn-success" ng-click="change('skill'); showFootballerSkills(footballer.id, footballer.firstName, footballer.lastName)">Show footballer skills</button>
+        <button class="btn btn-danger" ng-click="deleteFootballer(footballer.id); getAllFootballers()">Delete footballer</button>
+    </div>
+</div>
