@@ -196,7 +196,7 @@ public class OnStartService {
         club.name = "Real Madrid";
         club.league = "LaLeague";
         club.country = countryRepository.findOne(2L);
-        club.academy = academyRepository.findOne(3L);
+        club.academy = academyRepository.findOne(1L);
         clubRepository.save(club);
 
         club = new Club();
