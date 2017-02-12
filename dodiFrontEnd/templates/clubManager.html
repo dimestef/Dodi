@@ -1,0 +1,19 @@
+<div class="row" style="margin-top: 20px;" ng-repeat="manager in managers">
+    <div class="col-md-2"></div>
+    <div class="panel panel-success col-md-8">
+        <div class="panel-heading text-center"><h4><b>Name:</b> {{manager.firstName}} {{manager.lastName}}</h4></div>
+        <div class="panel-body text-center">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <b>Age:</b> {{manager.age}}
+                </li>
+                <li class="list-group-item">
+                    <b>Style of play:</b> {{manager.styleOfPlay}}
+                </li>
+                <li class="list-group-item">
+                    <b>Manager of the club:</b> {{manager.club.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

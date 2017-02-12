@@ -1,0 +1,43 @@
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-2"></div>
+    <div class="panel panel-success col-md-8">
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="managerFirstName" class="col-sm-4">Manager first name</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="managerObject.firstName" id="managerFirstName" placeholder="Manager first name">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="managerLastName" class="col-sm-4">Manager last name</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="managerObject.lastName" id="managerLastName" placeholder="Manager last name">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="managerAge" class="col-sm-4">Manager age</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="managerObject.age" id="managerAge" placeholder="Manager age">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="managerStyleOfPlay" class="col-sm-4">Manager style of play</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="managerObject.styleOfPlay" id="managerStyleOfPlay" placeholder="Manager style of play">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label class="col-sm-4">Club name</label>
+                    <div class="col-sm-8">
+                        <select class="form-control"
+                                ng-model="managerObject.club"
+                                ng-options="club as club.name for club in clubs">
+                        </select>
+                    </div>
+                </div><br>
+            </form>
+                <button class="btn btn-success" ng-click="addManager(managerObject)">Add new manager</button>
+        </div>
+    </div>
+</div>

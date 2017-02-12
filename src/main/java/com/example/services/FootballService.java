@@ -31,10 +31,12 @@ public class FootballService {
     @Autowired
     private SkillRepository skillRepository;
 
+    /*      Working      */
     public List<Club> getAllClubs() {
         return clubRepository.findAll();
     }
 
+    /*      Working      */
     public void deleteClub(Long clubId) {
         List<Contract> contractsToDelete = contractRepository.findByClubId(clubId);
         contractRepository.delete(contractsToDelete);
@@ -45,16 +47,17 @@ public class FootballService {
         clubRepository.delete(clubId);
     }
 
+    /*      Working      */
     public void addClub(Club club) {
         clubRepository.save(club);
     }
 
-
-
+    /*      Working      */
     public List<Footballer> getAllFootballers() {
         return footballerRepository.findAll();
     }
 
+    /*      Working      */
     public void deleteFootballer(Long footballerId) {
         List<Contract> contractsToDelete = contractRepository.findByFootballerId(footballerId);
         contractRepository.delete(contractsToDelete);
@@ -62,30 +65,57 @@ public class FootballService {
         footballerRepository.delete(footballerId);
     }
 
+    /*      Working      */
     public void addFootballer(Footballer footballer) {
         skillRepository.save(footballer.skill);
         footballerRepository.save(footballer);
     }
 
-
-
+    /*      Working      */
     public Skill showFootballerSkills(Long footballerId) {
         Footballer footballer = footballerRepository.findOne(footballerId);
         return footballer.skill;
     }
 
+    /*      Working      */
     public Skill updateSkill(Skill skill) {
         return skillRepository.saveAndFlush(skill);
     }
 
-
-
+    /*      Working      */
     public List<Country> getAllCountry() {
         return countryRepository.findAll();
     }
 
+    /*      Working      */
     public List<Academy> getAllAcademy() {
         return academyRepository.findAll();
+    }
+
+    /*      Working      */
+    public void makeContract(Contract contract){
+        contractRepository.saveAndFlush(contract);
+    }
+
+    /*      Working      */
+    public List<Manager> getAllManagers() {
+        return managerRepository.findAll();
+    }
+
+    /*      Working      */
+    public void addNewManager(Manager manager) {
+        Long clubToBeDeletedId = manager.club.id;
+        Long managerToBeDeletedId = null;
+        List<Manager> allManagers = managerRepository.findAll();
+
+        for (Manager m : allManagers){
+            if(m.club.id == clubToBeDeletedId){
+                managerToBeDeletedId = m.id;
+            }
+        }
+
+        managerRepository.delete(managerToBeDeletedId);
+        managerRepository.save(manager);
     }
 
 }

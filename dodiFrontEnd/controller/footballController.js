@@ -18,6 +18,12 @@ app.controller("footballController", ["$scope", "$http", "footballService", func
     $scope.addClubFlag = false;
     $scope.countries = [];
     $scope.academies = [];
+    $scope.contractObject = {};
+    $scope.makeContractFlag = false;
+    $scope.managers = [];
+    $scope.clubManagerFlag = false;
+    $scope.managerObject = {};
+    $scope.addNewManagerFlag = false;
 
 
     $scope.addClub = function (cObject) {
@@ -46,30 +52,72 @@ app.controller("footballController", ["$scope", "$http", "footballService", func
             $scope.skillFlag = false;
             $scope.addClubFlag = false;
             $scope.addFootballerFlag = false;
+            $scope.makeContractFlag = false;
+            $scope.clubManagerFlag = false;
+            $scope.addNewManagerFlag = false;
         }else if(str == "footballer"){
             $scope.footballerFlag = true;
             $scope.clubFlag = false;
             $scope.skillFlag = false;
             $scope.addClubFlag = false;
             $scope.addFootballerFlag = false;
+            $scope.makeContractFlag = false;
+            $scope.clubManagerFlag = false;
+            $scope.addNewManagerFlag = false;
         }else if(str == "addClub"){
             $scope.addClubFlag = true;
             $scope.clubFlag = false;
             $scope.skillFlag = false;
             $scope.footballerFlag = false;
             $scope.addFootballerFlag = false;
+            $scope.makeContractFlag = false;
+            $scope.clubManagerFlag = false;
+            $scope.addNewManagerFlag = false;
         }else if(str == "addFootballer"){
             $scope.addFootballerFlag = true;
             $scope.addClubFlag = false;
             $scope.clubFlag = false;
             $scope.skillFlag = false;
             $scope.footballerFlag = false;
+            $scope.makeContractFlag = false;
+            $scope.clubManagerFlag = false;
+            $scope.addNewManagerFlag = false;
+        }else if(str == "makeContract"){
+            $scope.makeContractFlag = true;
+            $scope.addFootballerFlag = false;
+            $scope.addClubFlag = false;
+            $scope.clubFlag = false;
+            $scope.skillFlag = false;
+            $scope.footballerFlag = false;
+            $scope.clubManagerFlag = false;
+            $scope.addNewManagerFlag = false;
+        }else if(str == "clubManager"){
+            $scope.clubManagerFlag = true;
+            $scope.makeContractFlag = false;
+            $scope.addFootballerFlag = false;
+            $scope.addClubFlag = false;
+            $scope.clubFlag = false;
+            $scope.skillFlag = false;
+            $scope.footballerFlag = false;
+            $scope.addNewManagerFlag = false;
+        }else if(str == "addNewManager"){
+            $scope.addNewManagerFlag = true;
+            $scope.clubManagerFlag = false;
+            $scope.makeContractFlag = false;
+            $scope.addFootballerFlag = false;
+            $scope.addClubFlag = false;
+            $scope.clubFlag = false;
+            $scope.skillFlag = false;
+            $scope.footballerFlag = false;
         }else{
             $scope.skillFlag = true;
+            $scope.addNewManagerFlag = false;
+            $scope.clubManagerFlag = false;
+            $scope.makeContractFlag = false;
+            $scope.addFootballerFlag = false;
+            $scope.addClubFlag = false;
             $scope.clubFlag = false;
             $scope.footballerFlag = false;
-            $scope.addClubFlag = false;
-            $scope.addFootballerFlag = false;
         }
     }
 
@@ -152,4 +200,30 @@ app.controller("footballController", ["$scope", "$http", "footballService", func
             });
     }
 
+    $scope.makeContract = function (contractObject) {
+        footballService.makeContract(contractObject)
+            .then(function (response) {
+                console.log(response);
+            }, function (error) {
+                console.log(error);
+            });
+    }
+
+    $scope.getAllManagers = function () {
+        footballService.getAllManagers()
+            .then(function (response) {
+                $scope.managers = response.data;
+            }, function (error) {
+                console.log(error);
+            });
+    }
+
+    $scope.addManager = function (managerObject) {
+        footballService.addManager(managerObject)
+            .then(function (response) {
+                console.log(response);
+            }, function (error) {
+                console.log(error);
+            });
+    }
 }]);

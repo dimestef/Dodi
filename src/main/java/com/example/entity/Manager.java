@@ -20,7 +20,7 @@ public class Manager {
     public Long age;
 
     @Column(name = "style_of_play")
-    public String styleOfPLay;
+    public String styleOfPlay;
 
     @ManyToOne
     @JoinColumn(name = "club_id")

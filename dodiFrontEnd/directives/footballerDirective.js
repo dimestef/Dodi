@@ -48,3 +48,33 @@ app.directive("addFootballer", function () {
         }
     }
 });
+
+app.directive("makeContract", function () {
+    return{
+        restrict: "E",
+        templateUrl: "templates/makeContract.html",
+        scope: false,
+        link: function (scope) {
+        }
+    }
+});
+
+app.directive("clubManager", function () {
+    return{
+        restrict: "E",
+        templateUrl: "templates/clubManager.html",
+        scope: false,
+        link: function (scope) {
+        }
+    }
+});
+
+app.directive("addNewManager", function () {
+    return{
+        restrict: "E",
+        templateUrl: "templates/addNewManager.html",
+        scope: false,
+        link: function (scope) {
+        }
+    }
+});

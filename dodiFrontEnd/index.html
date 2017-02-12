@@ -22,6 +22,9 @@
             <li>
                 <a href="javascript:void(0)" ng-click="change('footballer'); getAllFootballers()">Footballers</a>
             </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="change('clubManager'); getAllManagers();">Show club managers</a>
+            </li>
             <li class="sidebar-brand">
                 <a href="javascript:void(0)">
                     Add options
@@ -33,6 +36,12 @@
             <li>
                 <a href="javascript:void(0)" ng-click="change('addFootballer'); getAllCountry(); getAllFootballers();">Add a new Footballers</a>
             </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="change('makeContract'); getAllClubs(); getAllFootballers();">Make a new Contract</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="change('addNewManager'); getAllManagers(); getAllClubs()">Add new manager</a>
+            </li>
         </ul>
     </div>
 
@@ -41,6 +50,9 @@
     <skill ng-show="skillFlag"></skill>
     <add-club ng-show="addClubFlag"></add-club>
     <add-footballer ng-show="addFootballerFlag"></add-footballer>
+    <make-contract ng-show="makeContractFlag"></make-contract>
+    <club-manager ng-show="clubManagerFlag"></club-manager>
+    <add-new-manager ng-show="addNewManagerFlag"></add-new-manager>
 </div>
 
 <script src="angular/angular.js"></script>

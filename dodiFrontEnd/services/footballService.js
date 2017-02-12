@@ -11,8 +11,6 @@ app.service("footballService", ["$http", function ($http) {
         return $http.post("http://localhost:8080/addClub", club);
     };
 
-
-
     this.getAllFootballers = function () {
         return $http.get("http://localhost:8080/getAllFootballers");
     };
@@ -25,8 +23,6 @@ app.service("footballService", ["$http", function ($http) {
         return $http.post("http://localhost:8080/addFootballer", footballer);
     };
 
-
-
     this.showFootballerSkills = function (footballerId) {
         return $http.get("http://localhost:8080/showFootballerSkills/" + footballerId);
     };
@@ -35,14 +31,24 @@ app.service("footballService", ["$http", function ($http) {
         return $http.post("http://localhost:8080/updateSkill", skillObject);
     };
 
-
-
     this.getAllCountry = function () {
         return $http.get("http://localhost:8080/getAllCountry");
     };
 
     this.getAllAcademy = function () {
         return $http.get("http://localhost:8080/getAllAcademy");
+    };
+
+    this.makeContract = function (contractObject) {
+        return $http.post("http://localhost:8080/makeContract", contractObject);
+    };
+
+    this.getAllManagers = function () {
+        return $http.get("http://localhost:8080/getAllManagers");
+    };
+
+    this.addManager = function (managerObject) {
+        return $http.post("http://localhost:8080/addNewManager", managerObject);
     };
 
 }]);

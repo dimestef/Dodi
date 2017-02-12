@@ -1,0 +1,52 @@
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-2"></div>
+    <div class="panel panel-success col-md-8">
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="transferFee" class="col-sm-4">Enter transfer fee</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="contractObject.transferFee" id="transferFee" placeholder="Transfer fee">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="wage" class="col-sm-4">Enter wage</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="contractObject.wage" id="wage" placeholder="Wage">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="durationInMonths" class="col-sm-4">Duration mn months</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="contractObject.durationInMonths" id="durationInMonths" placeholder="Duration mn months">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="dateSigned" class="col-sm-4">Date signed</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="contractObject.dateSigned" id="dateSigned" placeholder="Format dd-mm-yyyy">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label class="col-sm-4">Select footballer</label>
+                    <div class="col-sm-8">
+                        <select class="form-control"
+                                ng-model="contractObject.footballer"
+                                ng-options="footballer as footballer.firstName for footballer in footballers">
+                        </select>
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label class="col-sm-4">Select club</label>
+                    <div class="col-sm-8">
+                        <select class="form-control"
+                                ng-model="contractObject.club"
+                                ng-options="club as club.name for club in clubs">
+                        </select>
+                    </div>
+                </div><br>
+            </form>
+            <button class="btn btn-success" ng-click="makeContract(contractObject)">Make the contract</button>
+        </div>
+    </div>
+</div>

@@ -51,7 +51,7 @@ public class OnStartService {
         manager.firstName = "José";
         manager.lastName = "Mourinho";
         manager.age = 54L;
-        manager.styleOfPLay = "4-3-3";
+        manager.styleOfPlay = "4-3-3";
         manager.club = clubRepository.findOne(1L);
         managerRepository.save(manager);
 
@@ -59,7 +59,7 @@ public class OnStartService {
         manager.firstName = "Zinedine";
         manager.lastName = "Zidane";
         manager.age = 44L;
-        manager.styleOfPLay = "4-3-3";
+        manager.styleOfPlay = "4-3-3";
         manager.club = clubRepository.findOne(2L);
         managerRepository.save(manager);
 
@@ -67,7 +67,7 @@ public class OnStartService {
         manager.firstName = "Luis";
         manager.lastName = "Enrique";
         manager.age = 46L;
-        manager.styleOfPLay = "4-3-3";
+        manager.styleOfPlay = "4-3-3";
         manager.club = clubRepository.findOne(3L);
         managerRepository.save(manager);
     }
